@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Review Reports - Nagar Sheba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>Nagar Sheba</h1>
+    <p>Officer Panel - Roads and Highways Department</p>
+  </div>
+
+  <div class="topnav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="review-reports.html" class="active">Review Reports</a>
+    <a href="assign-worker.html">Assign Worker</a>
+    <a href="verify-resolution.html">Verify Resolution</a>
+    <a href="department-reports.html">Department Reports</a>
+    <a href="">Logout</a>
+  </div>
+
+  <div class="container">
+    <h2>Review Reports</h2>
+    <p>Check the reports submitted by citizens in your department.</p>
+
+    <form action="" onsubmit="return validateSearch()" novalidate>
+      <fieldset>
+        <legend>Search Reports</legend>
+        <label for="keyword">Keyword:</label>
+        <input type="text" id="keyword" name="keyword" placeholder="Title or location">
+
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="">All</option>
+          <option value="pothole">Pothole</option>
+          <option value="road">Road Damage</option>
+          <option value="footpath">Footpath Repair</option>
+          <option value="sign">Road Sign/Marking</option>
+        </select>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+          <option value="">All</option>
+          <option value="pending">Pending</option>
+          <option value="progress">In Progress</option>
+          <option value="verify">Awaiting Verification</option>
+          <option value="resolved">Resolved</option>
+        </select>
+
+        <button type="submit">Search</button>
+      </fieldset>
+    </form>
+
+    <p id="message"></p>
+
+    <table class="data">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Location</th>
+        <th>Date</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>R101</td>
+        <td>Large pothole on main road</td>
+        <td>Pothole</td>
+        <td>Mirpur-10</td>
+        <td>2026-10-20</td>
+        <td>High</td>
+        <td><span class="pending">Pending</span></td>
+        <td><a href="report-details.html">View</a> | <a href="assign-worker.html">Assign</a></td>
+      </tr>
+      <tr>
+        <td>R102</td>
+        <td>Damaged footpath</td>
+        <td>Footpath Repair</td>
+        <td>Dhanmondi 27</td>
+        <td>2026-10-18</td>
+        <td>Medium</td>
+        <td><span class="progress">In Progress</span></td>
+        <td><a href="report-details.html">View</a></td>
+      </tr>
+      <tr>
+        <td>R103</td>
+        <td>Broken road divider</td>
+        <td>Road Damage</td>
+        <td>Uttara Sector 7</td>
+        <td>2026-10-22</td>
+        <td>Medium</td>
+        <td><span class="pending">Pending</span></td>
+        <td><a href="report-details.html">View</a> | <a href="assign-worker.html">Assign</a></td>
+      </tr>
+      <tr>
+        <td>R104</td>
+        <td>Faded zebra crossing</td>
+        <td>Road Sign/Marking</td>
+        <td>Banani Road 11</td>
+        <td>2026-10-10</td>
+        <td>Low</td>
+        <td><span class="resolved">Resolved</span></td>
+        <td><a href="report-details.html">View</a></td>
+      </tr>
+      <tr>
+        <td>R105</td>
+        <td>Road cracked after rain</td>
+        <td>Road Damage</td>
+        <td>Mohammadpur</td>
+        <td>2026-10-15</td>
+        <td>High</td>
+        <td><span class="verify">Awaiting Verification</span></td>
+        <td><a href="verify-resolution.html">Verify</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 Nagar Sheba. All rights reserved.</p>
+  </div>
+
+  <script src="validation.js"></script>
+
+</body>
+</html>

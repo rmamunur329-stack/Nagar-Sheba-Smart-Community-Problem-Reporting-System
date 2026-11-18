@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Officer Dashboard - Nagar Sheba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>Nagar Sheba</h1>
+    <p>Officer Panel - Roads and Highways Department</p>
+  </div>
+
+  <div class="topnav">
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="review-reports.html">Review Reports</a>
+    <a href="assign-worker.html">Assign Worker</a>
+    <a href="verify-resolution.html">Verify Resolution</a>
+    <a href="department-reports.html">Department Reports</a>
+    <a href="">Logout</a>
+  </div>
+
+  <div class="container">
+    <h2>Officer Dashboard</h2>
+    <p>Welcome, Officer. Here is a summary of your department's reports.</p>
+
+    <div class="cards">
+      <div class="card"><h3>Total</h3><p>48</p></div>
+      <div class="card"><h3>Pending</h3><p>12</p></div>
+      <div class="card"><h3>In Progress</h3><p>20</p></div>
+      <div class="card"><h3>To Verify</h3><p>6</p></div>
+      <div class="card"><h3>Resolved</h3><p>10</p></div>
+    </div>
+
+    <h2>Quick Links</h2>
+    <a class="btn" href="review-reports.html">Review Reports</a>
+    <a class="btn" href="assign-worker.html">Assign Worker</a>
+    <a class="btn" href="verify-resolution.html">Verify Resolution</a>
+    <a class="btn" href="department-reports.html">Department Reports</a>
+
+    <h2>Recent Reports</h2>
+    <table class="data">
+      <tr>
+        <th>ID</th><th>Title</th><th>Location</th><th>Status</th><th>Action</th>
+      </tr>
+      <tr>
+        <td>R101</td><td>Large pothole on main road</td><td>Mirpur-10</td>
+        <td><span class="pending">Pending</span></td>
+        <td><a href="report-details.html">View</a></td>
+      </tr>
+      <tr>
+        <td>R102</td><td>Damaged footpath</td><td>Dhanmondi 27</td>
+        <td><span class="progress">In Progress</span></td>
+        <td><a href="report-details.html">View</a></td>
+      </tr>
+      <tr>
+        <td>R105</td><td>Road cracked after rain</td><td>Mohammadpur</td>
+        <td><span class="verify">Awaiting Verification</span></td>
+        <td><a href="verify-resolution.html">Verify</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 Nagar Sheba. All rights reserved.</p>
+  </div>
+
+  <script src="validation.js"></script>
+
+</body>
+</html>

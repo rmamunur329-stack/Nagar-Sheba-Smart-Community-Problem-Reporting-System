@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assign Worker - Nagar Sheba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>Nagar Sheba</h1>
+    <p>Officer Panel - Roads and Highways Department</p>
+  </div>
+
+  <div class="topnav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="review-reports.html">Review Reports</a>
+    <a href="assign-worker.html" class="active">Assign Worker</a>
+    <a href="verify-resolution.html">Verify Resolution</a>
+    <a href="department-reports.html">Department Reports</a>
+    <a href="">Logout</a>
+  </div>
+
+  <div class="container">
+    <h2>Assign Worker</h2>
+    <p>Choose a field worker to fix an accepted report.</p>
+
+    <form action="" onsubmit="return validateAssign()" novalidate>
+      <fieldset>
+        <legend>Assignment Form</legend>
+        <table class="form-table">
+          <tr>
+            <td><label for="reportid">Report ID:</label></td>
+            <td><input type="text" id="reportid" name="reportid" value="R101" readonly></td>
+          </tr>
+          <tr>
+            <td><label for="title">Title:</label></td>
+            <td><input type="text" id="title" name="title" value="Large pothole on main road" size="35" readonly></td>
+          </tr>
+          <tr>
+            <td><label for="worker">Field Worker:</label></td>
+            <td>
+              <select id="worker" name="worker" required>
+                <option value="">Select Worker</option>
+                <option value="karim">Karim Uddin</option>
+                <option value="rahim">Rahim Mia</option>
+                <option value="sumon">Sumon Das</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Priority:</td>
+            <td>
+              <input type="radio" id="high" name="priority" value="high" checked>
+              <label for="high">High</label>
+              <input type="radio" id="medium" name="priority" value="medium">
+              <label for="medium">Medium</label>
+              <input type="radio" id="low" name="priority" value="low">
+              <label for="low">Low</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="duedate">Due Date:</label></td>
+            <td><input type="date" id="duedate" name="duedate" required></td>
+          </tr>
+          <tr>
+            <td><label for="instructions">Instructions:</label></td>
+            <td><textarea id="instructions" name="instructions" rows="4" cols="40"></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button type="submit">Assign Worker</button>
+              <input type="reset" value="Clear">
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+
+    <p id="message"></p>
+
+    <h3>Available Workers</h3>
+    <table class="data">
+      <tr><th>Name</th><th>Department</th><th>Active Tasks</th></tr>
+      <tr><td>Karim Uddin</td><td>Roads and Highways</td><td>2</td></tr>
+      <tr><td>Rahim Mia</td><td>Roads and Highways</td><td>1</td></tr>
+      <tr><td>Sumon Das</td><td>Roads and Highways</td><td>0</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 Nagar Sheba. All rights reserved.</p>
+  </div>
+
+  <script src="validation.js"></script>
+
+</body>
+</html>

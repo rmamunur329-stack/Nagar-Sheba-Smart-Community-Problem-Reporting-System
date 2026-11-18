@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Department Reports - Nagar Sheba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>Nagar Sheba</h1>
+    <p>Officer Panel - Roads and Highways Department</p>
+  </div>
+
+  <div class="topnav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="review-reports.html">Review Reports</a>
+    <a href="assign-worker.html">Assign Worker</a>
+    <a href="verify-resolution.html">Verify Resolution</a>
+    <a href="department-reports.html" class="active">Department Reports</a>
+    <a href="">Logout</a>
+  </div>
+
+  <div class="container">
+    <h2>Department Reports</h2>
+    <p>Summary of all reports in the Roads and Highways Department.</p>
+
+    <form action="department-reports.html" method="get" onsubmit="return validateFilter()" novalidate>
+      <fieldset>
+        <legend>Filter</legend>
+        <label for="from">From:</label>
+        <input type="date" id="from" name="from">
+
+        <label for="to">To:</label>
+        <input type="date" id="to" name="to">
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+          <option value="">All</option>
+          <option value="pending">Pending</option>
+          <option value="progress">In Progress</option>
+          <option value="resolved">Resolved</option>
+        </select>
+
+        <button type="submit">Show</button>
+      </fieldset>
+    </form>
+
+    <p id="message"></p>
+
+    <h3>Summary by Category</h3>
+    <table class="data">
+      <tr>
+        <th>Category</th><th>Total</th><th>Pending</th><th>In Progress</th><th>Resolved</th>
+      </tr>
+      <tr><td>Pothole</td><td>18</td><td>5</td><td>8</td><td>5</td></tr>
+      <tr><td>Road Damage</td><td>14</td><td>4</td><td>6</td><td>4</td></tr>
+      <tr><td>Footpath Repair</td><td>10</td><td>2</td><td>4</td><td>4</td></tr>
+      <tr><td>Road Sign/Marking</td><td>6</td><td>1</td><td>2</td><td>3</td></tr>
+    </table>
+
+    <h3>All Reports</h3>
+    <table class="data">
+      <tr>
+        <th>ID</th><th>Title</th><th>Worker</th><th>Date</th><th>Status</th>
+      </tr>
+      <tr><td>R101</td><td>Large pothole on main road</td><td>Not assigned</td><td>2026-10-20</td><td><span class="pending">Pending</span></td></tr>
+      <tr><td>R102</td><td>Damaged footpath</td><td>Rahim Mia</td><td>2026-10-18</td><td><span class="progress">In Progress</span></td></tr>
+      <tr><td>R104</td><td>Faded zebra crossing</td><td>Sumon Das</td><td>2026-10-10</td><td><span class="resolved">Resolved</span></td></tr>
+      <tr><td>R105</td><td>Road cracked after rain</td><td>Karim Uddin</td><td>2026-10-15</td><td><span class="verify">Awaiting Verification</span></td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 Nagar Sheba. All rights reserved.</p>
+  </div>
+
+  <script src="validation.js"></script>
+
+</body>
+</html>

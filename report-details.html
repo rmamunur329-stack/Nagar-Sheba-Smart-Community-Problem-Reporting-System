@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report Details - Nagar Sheba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="header">
+    <h1>Nagar Sheba</h1>
+    <p>Officer Panel - Roads and Highways Department</p>
+  </div>
+
+  <div class="topnav">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="review-reports.html">Review Reports</a>
+    <a href="assign-worker.html">Assign Worker</a>
+    <a href="verify-resolution.html">Verify Resolution</a>
+    <a href="department-reports.html">Department Reports</a>
+    <a href="../auth/login.html">Logout</a>
+  </div>
+
+  <div class="container">
+    <h2>Report Details</h2>
+
+    <div class="row">
+      <div class="left">
+        <table class="data">
+          <tr><th>Report ID</th><td>R101</td></tr>
+          <tr><th>Title</th><td>Large pothole on main road</td></tr>
+          <tr><th>Category</th><td>Pothole</td></tr>
+          <tr><th>Location</th><td>Mirpur-10, Dhaka</td></tr>
+          <tr><th>Submitted By</th><td>Citizen: Nusrat Jahan</td></tr>
+          <tr><th>Date</th><td>2026-10-20</td></tr>
+          <tr><th>Priority</th><td>High</td></tr>
+          <tr><th>Status</th><td><span class="pending">Pending</span></td></tr>
+          <tr><th>Description</th><td>A deep pothole near the bus stop is causing accidents.</td></tr>
+        </table>
+      </div>
+
+      <div class="right">
+        <p><b>Photo Evidence</b></p>
+        <img src="https://fastly.picsum.photos/id/13/2500/1667.jpg?hmac=SoX9UoHhN8HyklRA4A3vcCWJMVtiBXUg0W4ljWTor7s"
+             width="250px" height="160px" alt="Report Photo">
+      </div>
+    </div>
+
+    <form action="review-reports.html" method="post" onsubmit="return validateDecision()" novalidate>
+      <fieldset>
+        <legend>Officer Decision</legend>
+        <table class="form-table">
+          <tr>
+            <td><label for="decision">Decision:</label></td>
+            <td>
+              <select id="decision" name="decision">
+                <option value="accept">Accept Report</option>
+                <option value="reject">Reject Report</option>
+                <option value="info">Need More Information</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="priority">Priority:</label></td>
+            <td>
+              <select id="priority" name="priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="remarks">Remarks:</label></td>
+            <td><textarea id="remarks" name="remarks" rows="4" cols="40"></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button type="submit">Submit Decision</button>
+              <a class="btn" href="assign-worker.html">Assign Worker</a>
+              <a class="btn btn-red" href="review-reports.html">Back</a>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2026 Nagar Sheba. All rights reserved.</p>
+  </div>
+
+  <script src="validation.js"></script>
+
+</body>
+</html>
