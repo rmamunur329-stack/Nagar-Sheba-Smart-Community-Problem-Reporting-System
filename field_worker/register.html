@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Field Worker Registration - Nagar Sheba</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+  <center>
+    <h1>Nagar Sheba</h1>
+    <h3>Smart Community Problem Reporting System</h3>
+  </center>
+
+  <hr>
+
+  <center>
+    <h2>Field Worker Registration</h2>
+    <p>Fill in the form below to create your account.</p>
+
+    <form onsubmit="return registerUser()">
+
+      <table border="1" cellpadding="10" cellspacing="0">
+
+        <tr>
+          <td><label for="fullname">Full Name:</label></td>
+          <td><input type="text" id="fullname" name="fullname" size="30" required></td>
+        </tr>
+
+        <tr>
+          <td><label for="workerId">Worker ID:</label></td>
+          <td><input type="text" id="workerId" name="workerId" size="30" required></td>
+        </tr>
+
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email" size="30" required></td>
+        </tr>
+
+        <tr>
+          <td><label for="phone">Phone Number:</label></td>
+          <td><input type="tel" id="phone" name="phone" size="30" required></td>
+        </tr>
+
+        <tr>
+          <td><label for="department">Department:</label></td>
+          <td>
+            <select id="department" name="department" required>
+              <option value="">-- Select Department --</option>
+              <option value="roads">Roads and Highways</option>
+              <option value="water">Water Supply</option>
+              <option value="electricity">Electricity</option>
+              <option value="waste">Waste Management</option>
+              <option value="drainage">Drainage and Sewerage</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="password">Password:</label></td>
+          <td><input type="password" id="password" name="password" size="30" required></td>
+        </tr>
+
+        <tr>
+          <td><label for="confirm">Confirm Password:</label></td>
+          <td><input type="password" id="confirm" name="confirm" size="30" required></td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">I agree to the terms and conditions</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+          </td>
+        </tr>
+
+      </table>
+
+    </form>
+
+    <p class="error" id="errorMsg"></p>
+
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+    <p><a href="../index.html">Back to Home</a></p>
+  </center>
+
+  <hr>
+
+  <center>
+    <p>&copy; 2026 Nagar Sheba. All rights reserved.</p>
+  </center>
+
+  <script>
+    function registerUser() {
+      var password = document.getElementById("password").value;
+      var confirm = document.getElementById("confirm").value;
+      var phone = document.getElementById("phone").value;
+
+      // simple checks
+      if (password.length < 6) {
+        document.getElementById("errorMsg").innerHTML = "Password must be at least 6 characters.";
+        return false;
+      }
+      if (password != confirm) {
+        document.getElementById("errorMsg").innerHTML = "Passwords do not match!";
+        return false;
+      }
+      if (phone.length < 11) {
+        document.getElementById("errorMsg").innerHTML = "Please enter a valid phone number.";
+        return false;
+      }
+
+      // make a user object
+      var user = {
+        name: document.getElementById("fullname").value,
+        workerId: document.getElementById("workerId").value,
+        email: document.getElementById("email").value,
+        phone: phone,
+        department: document.getElementById("department").value,
+        password: password
+      };
+
+      // save it in localStorage (a real project would use a database)
+      var users = [];
+      var saved = localStorage.getItem("users");
+      if (saved) {
+        users = JSON.parse(saved);
+      }
+      users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+
+      alert("Registration successful! Please login.");
+      window.location.href = "login.html";
+      return false;
+    }
+  </script>
+
+</body>
+</html>

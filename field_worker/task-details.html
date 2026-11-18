@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Task Details - Nagar Sheba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadTaskDetails()">
+  <header><h1>Nagar Sheba - Field Worker</h1></header>
+  <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="assigned-tasks.html">Assigned Tasks</a>
+    <a href="task-history.html">Task History</a>
+    <a href="../auth/login.html">Logout</a>
+  </nav>
+  <div class="container">
+    <h2>Task Details</h2>
+    <div class="box">
+      <div id="details"></div>
+      <button onclick="changeStatus('Accepted')">Accept Task</button>
+      <button onclick="changeStatus('In Progress')">Start Task</button>
+      <a class="btn" id="updateLink" href="update-task.html">Update / Submit Work</a>
+      <a class="btn" href="assigned-tasks.html">Back</a>
+    </div>
+  </div>
+  <footer>Nagar Sheba - Smart Community Problem Reporting System</footer>
+  <script src="script.js"></script>
+</body>
+</html>
