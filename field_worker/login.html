@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Field Worker Login - Nagar Sheba</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+  <center>
+    <h1>Nagar Sheba</h1>
+    <h3>Smart Community Problem Reporting System</h3>
+  </center>
+
+  <hr>
+
+  <center>
+    <h2>Field Worker Login</h2>
+    <p>Please log in to view and update your assigned tasks.</p>
+
+    <form onsubmit="return checkLogin()">
+
+      <table border="1" cellpadding="10" cellspacing="0">
+
+        <tr>
+          <td><label for="workerid">Worker ID / Email:</label></td>
+          <td><input type="text" id="workerid" name="workerid" size="30" required></td>
+        </tr>
+
+        <tr>
+          <td><label for="password">Password:</label></td>
+          <td><input type="password" id="password" name="password" size="30" required></td>
+        </tr>
+
+        <tr>
+          <td><label for="department">Department:</label></td>
+          <td>
+            <select id="department" name="department">
+              <option value="">-- Select Department --</option>
+              <option value="roads">Roads and Highways</option>
+              <option value="water">Water Supply</option>
+              <option value="electricity">Electricity</option>
+              <option value="waste">Waste Management</option>
+              <option value="drainage">Drainage and Sewerage</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" value="Login">
+            <input type="reset" value="Clear">
+          </td>
+        </tr>
+
+      </table>
+
+    </form>
+
+    <p class="error" id="errorMsg"></p>
+
+    <a href="#">Forgot Password?</a>
+    <br><br>
+
+    <p>
+      Not a field worker?
+      <a href="login.html">Citizen Login</a> |
+      <a href="login.html">Officer Login</a> |
+      <a href="login.html">Admin Login</a>
+    </p>
+
+    <p>
+      Need an account? Contact your Department Officer or
+      <a href="register.html">Register here</a>.
+    </p>
+
+    <p><a href="../index.html">Back to Home</a></p>
+  </center>
+
+  <hr>
+
+  <center>
+    <p>&copy; 2026 Nagar Sheba. All rights reserved.</p>
+  </center>
+
+  <script>
+    // Demo login: worker1 / 1234 works, or any account made on the register page
+    function checkLogin() {
+      var id = document.getElementById("workerid").value;
+      var pass = document.getElementById("password").value;
+      var found = false;
+
+      if (id == "worker1" && pass == "1234") {
+        found = true;
+      }
+
+      // check accounts saved by the register page
+      var saved = localStorage.getItem("users");
+      if (saved) {
+        var users = JSON.parse(saved);
+        for (var i = 0; i < users.length; i++) {
+          if ((users[i].email == id || users[i].workerId == id) && users[i].password == pass) {
+            found = true;
+          }
+        }
+      }
+
+      if (found) {
+        window.location.href = "../field_worker/dashboard.html";
+      } else {
+        document.getElementById("errorMsg").innerHTML = "Wrong Worker ID / Email or password!";
+      }
+      return false;   // stops the normal form submit
+    }
+  </script>
+
+</body>
+</html>

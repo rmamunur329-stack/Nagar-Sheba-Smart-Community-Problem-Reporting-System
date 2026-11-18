@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Task History - Nagar Sheba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadHistory()">
+  <header><h1>Nagar Sheba - Field Worker</h1></header>
+  <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="assigned-tasks.html">Assigned Tasks</a>
+    <a href="task-history.html">Task History</a>
+    <a href="../auth/login.html">Logout</a>
+  </nav>
+  <div class="container">
+    <h2>Task History</h2>
+    <div class="box">
+      <table>
+        <tr><th>ID</th><th>Title</th><th>Location</th><th>Priority</th><th>Deadline</th><th>Status</th><th>Action</th></tr>
+        <tbody id="historyRows"></tbody>
+      </table>
+    </div>
+  </div>
+  <footer>Nagar Sheba - Smart Community Problem Reporting System</footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Update Task - Nagar Sheba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadUpdatePage()">
+  <header><h1>Nagar Sheba - Field Worker</h1></header>
+  <nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="assigned-tasks.html">Assigned Tasks</a>
+    <a href="task-history.html">Task History</a>
+    <a href="../auth/login.html">Logout</a>
+  </nav>
+  <div class="container">
+    <h2>Update Task</h2>
+    <div class="box">
+      <p><b>Task:</b> <span id="taskTitle"></span></p>
+
+      <label for="beforePhoto">Before Photo</label>
+      <input type="file" id="beforePhoto" accept="image/*" onchange="showPreview('beforePhoto','beforeImg')">
+      <img id="beforeImg" class="preview" alt="">
+
+      <label for="afterPhoto">After Photo</label>
+      <input type="file" id="afterPhoto" accept="image/*" onchange="showPreview('afterPhoto','afterImg')">
+      <img id="afterImg" class="preview" alt="">
+
+      <label for="progress">Progress</label>
+      <select id="progress">
+        <option value="In Progress">In Progress</option>
+        <option value="Delayed">Delayed</option>
+      </select>
+
+      <label for="note">Progress Note</label>
+      <textarea id="note" rows="3"></textarea>
+
+      <label for="delay">Reason for Delay (only if delayed)</label>
+      <input type="text" id="delay">
+
+      <button onclick="saveUpdate()">Save Progress</button>
+      <button onclick="submitCompletion()">Submit Completion</button>
+      <a class="btn" href="assigned-tasks.html">Back</a>
+      <p class="msg" id="message"></p>
+    </div>
+  </div>
+  <footer>Nagar Sheba - Smart Community Problem Reporting System</footer>
+  <script src="script.js"></script>
+</body>
+</html>
