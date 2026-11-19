@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Reports - Nagar Sheba</title>
+  <link rel="stylesheet" href="my-reports1.html">
+</head>
+<body>
+
+  <header>
+    <h1>Nagar Sheba</h1>
+    <hr>
+  </header>
+
+  <main>
+    <h2>My Reports</h2>
+    <p>All the reports you have submitted are listed here.</p>
+
+    <div class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Type</th>
+            <th>Details</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="report-list">
+          <tr>
+            <td colspan="5" class="empty">No reports submitted yet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      <a href="create-report1.html">Create a New Report</a> |
+      <a href="dashboard1.html">Back to Dashboard</a>
+    </p>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; Nagar Sheba</p>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var REPORTS_KEY = 'nagarSheba_reports';
+      var MOBILE_BREAKPOINT = 600;
+      var DETAILS_LIMIT_DESKTOP = 100;
+      var DETAILS_LIMIT_MOBILE = 35;
+
+      var tbody = document.getElementById('report-list');
+      var tableBox = document.querySelector('.table-box');
+      var searchText = '';
+      var statusFilter = 'All';
+      var expanded = {}; // report id -> true when details are expanded
+
+      var STATUS_COLORS = {
+        'Pending':     { bg: '#fff4e0', fg: '#a35a00' },
+        'In Progress': { bg: '#e3edff', fg: '#1d4fa3' },
+        'Resolved':    { bg: '#e6f4ea', fg: '#1e6b35' },
+        'Rejected':    { bg: '#fdecec', fg: '#b3261e' }
+      };
+
+      // ---------- Storage ----------
+      // Format saved by dashboard.html: { id, type, details, date (ISO), status }
+      function getReports() {
+        try {
+          var data = JSON.parse(localStorage.getItem(REPORTS_KEY));
+          return Array.isArray(data) ? data : [];
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function formatDate(value) {
+        var d = new Date(value);
+        if (isNaN(d.getTime())) return value || 'N/A';
+        var dd = String(d.getDate()).padStart(2, '0');
+        var mm = String(d.getMonth() + 1).padStart(2, '0');
+        return dd + '-' + mm + '-' + d.getFullYear();
+      }
+
+      function isMobile() {
+        return window.innerWidth <= MOBILE_BREAKPOINT;
+      }
+
+      // ---------- Toolbar: search + status filter ----------
+      var toolbar = document.createElement('div');
+      toolbar.style.cssText =
+        'display:none;flex-wrap:wrap;gap:10px;justify-content:space-between;' +
+        'align-items:center;margin-top:20px;text-align:left;';
+
+      var search = document.createElement('input');
+      search.type = 'search';
+      search.placeholder = 'Search reports...';
+      search.setAttribute('aria-label', 'Search reports');
+      search.style.cssText =
+        'flex:1 1 200px;padding:10px;border:1px solid #bbb;border-radius:5px;' +
+        'font-size:14px;font-family:Arial,sans-serif;background:#fff;color:#333;box-sizing:border-box;';
+
+      var select = document.createElement('select');
+      select.setAttribute('aria-label', 'Filter by status');
+      select.style.cssText =
+        'flex:0 1 180px;padding:10px;border:1px solid #bbb;border-radius:5px;' +
+        'font-size:14px;font-family:Arial,sans-serif;background:#fff;color:#333;box-sizing:border-box;';
+
+      ['All', 'Pending', 'In Progress', 'Resolved', 'Rejected'].forEach(function (s) {
+        var opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s === 'All' ? 'All statuses' : s;
+        select.appendChild(opt);
+      });
+
+      var count = document.createElement('div');
+      count.style.cssText = 'flex:1 1 100%;font-size:13px;color:#555;';
+
+      toolbar.appendChild(search);
+      toolbar.appendChild(select);
+      toolbar.appendChild(count);
+      tableBox.insertAdjacentElement('beforebegin', toolbar);
+
+      search.addEventListener('input', function () {
+        searchText = search.value.trim().toLowerCase();
+        render();
+      });
+      select.addEventListener('change', function () {
+        statusFilter = select.value;
+        render();
+      });
+
+      function emptyRow(message) {
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        td.colSpan = 5;
+        td.className = 'empty';
+        td.textContent = message;
+        tr.appendChild(td);
+        return tr;
+      }
+
+      function statusBadge(status) {
+        var colors = STATUS_COLORS[status] || { bg: '#eef3fa', fg: '#243a63' };
+        var span = document.createElement('span');
+        span.textContent = status;
+        span.style.cssText =
+          'display:inline-block;padding:2px 10px;border-radius:12px;font-size:0.85em;' +
+          'font-weight:bold;white-space:nowrap;background:' + colors.bg + ';color:' + colors.fg + ';';
+        return span;
+      }
+
+      function buildRow(report, number) {
+        var tr = document.createElement('tr');
+
+        var tdNo = document.createElement('td');
+        tdNo.textContent = number;
+
+        var tdType = document.createElement('td');
+        tdType.textContent = report.type || '-';
+
+        var tdDetails = document.createElement('td');
+        var full = report.details || '';
+        var limit = isMobile() ? DETAILS_LIMIT_MOBILE : DETAILS_LIMIT_DESKTOP;
+        var isLong = full.length > limit;
+
+        function paintDetails() {
+          tdDetails.textContent = (isLong && !expanded[report.id])
+            ? full.slice(0, limit).trim() + '...'
+            : full;
+        }
+        paintDetails();
+        tdDetails.style.wordBreak = 'break-word';
+
+        if (isLong) {
+          tdDetails.style.cursor = 'pointer';
+          tdDetails.title = 'Tap to show more / less';
+          tdDetails.addEventListener('click', function () {
+            expanded[report.id] = !expanded[report.id];
+            paintDetails();
+          });
+        }
+
+        var tdDate = document.createElement('td');
+        tdDate.textContent = formatDate(report.date);
+        tdDate.style.whiteSpace = 'nowrap';
+
+        var tdStatus = document.createElement('td');
+        tdStatus.appendChild(statusBadge(report.status || 'Pending'));
+
+        [tdNo, tdType, tdDetails, tdDate, tdStatus].forEach(function (td) { tr.appendChild(td); });
+        return tr;
+      }
+
+      function render() {
+        var all = getReports();
+
+        tbody.innerHTML = '';
+
+        if (all.length === 0) {
+          toolbar.style.display = 'none';
+          tbody.appendChild(emptyRow('No reports submitted yet.'));
+          return;
+        }
+
+        toolbar.style.display = 'flex';
+
+        // Newest first, but keep a stable original number for each report
+        var numbered = all.map(function (r, i) {
+          return { report: r, number: i + 1 };
+        }).reverse();
+
+        var shown = numbered.filter(function (item) {
+          var r = item.report;
+          var matchesStatus = statusFilter === 'All' || (r.status || 'Pending') === statusFilter;
+          var haystack = ((r.type || '') + ' ' + (r.details || '')).toLowerCase();
+          return matchesStatus && (searchText === '' || haystack.indexOf(searchText) !== -1);
+        });
+
+        count.textContent = 'Showing ' + shown.length + ' of ' + all.length +
+          ' report' + (all.length === 1 ? '' : 's');
+
+        if (shown.length === 0) {
+          tbody.appendChild(emptyRow('No reports match your search.'));
+          return;
+        }
+
+        shown.forEach(function (item) {
+          tbody.appendChild(buildRow(item.report, item.number));
+        });
+      }
+
+      
+      function adjustLayout() {
+        tableBox.style.overflowX = 'auto';
+        toolbar.style.justifyContent = isMobile() ? 'center' : 'space-between';
+        select.style.flex = isMobile() ? '1 1 100%' : '0 1 180px';
+        render(); // re-trim the details text for the new screen size
+      }
+
+      var resizeTimer;
+      function onResize() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(adjustLayout, 150);
+      }
+
+      window.addEventListener('resize', onResize);
+      window.addEventListener('orientationchange', onResize);
+
+      // Refresh automatically if reports change in another tab
+      window.addEventListener('storage', function (e) {
+        if (e.key === REPORTS_KEY) render();
+      });
+
+      
+      adjustLayout();
+    })();
+  </script>
+
+</body>
+</html>

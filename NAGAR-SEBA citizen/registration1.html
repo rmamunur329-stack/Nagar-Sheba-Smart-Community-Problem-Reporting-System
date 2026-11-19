@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration</title>
+  <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+<div>
+  <p>
+  <h4 align="center">Please Start</h4></div><h1 align="center"> Registration</h1><div>
+  </p></div>
+
+
+<form align="center">
+  <div>
+  <label for="name">Name:</label>
+    <input type="text" id="name" required>
+  </div>
+  <br>
+
+  <div>
+  <label for="nid">NID no.: </label>
+    <input type="number" id="nid" required>
+  </div>
+  <br>
+
+  <div>
+  <label for="division">Division:</label>
+    <select name="division" id="division">
+      <option value="">-- Select Division --</option>
+      <option value="Dhaka">Dhaka</option>
+      <option value="Chattogram">Chattogram</option>
+      <option value="Rajshahi">Rajshahi</option>
+      <option value="Khulna">Khulna</option>
+      <option value="Barishal">Barishal</option>
+      <option value="Sylhet">Sylhet</option>
+      <option value="Rangpur">Rangpur</option>
+      <option value="Mymensingh">Mymensingh</option>
+    </select>
+  </div>
+  <br>
+
+  <div>
+  <label for="District">District: </label>
+    <select id="District" >
+      <option value="">-- Select District --</option>
+
+      <optgroup label="Dhaka Division">
+        <option>Dhaka</option>
+        <option>Faridpur</option>
+        <option>Gazipur</option>
+        <option>Gopalganj</option>
+        <option>Kishoreganj</option>
+        <option>Madaripur</option>
+        <option>Manikganj</option>
+        <option>Munshiganj</option>
+        <option>Narayanganj</option>
+        <option>Narsingdi</option>
+        <option>Rajbari</option>
+        <option>Shariatpur</option>
+        <option>Tangail</option>
+      </optgroup>
+
+      <optgroup label="Chattogram Division">
+        <option>Bandarban</option>
+        <option>Brahmanbaria</option>
+        <option>Chandpur</option>
+        <option>Chattogram</option>
+        <option>Cumilla</option>
+        <option>Cox's Bazar</option>
+        <option>Feni</option>
+        <option>Khagrachhari</option>
+        <option>Lakshmipur</option>
+        <option>Noakhali</option>
+        <option>Rangamati</option>
+      </optgroup>
+
+      <optgroup label="Rajshahi Division">
+        <option>Bogura</option>
+        <option>Joypurhat</option>
+        <option>Naogaon</option>
+        <option>Natore</option>
+        <option>Chapainawabganj</option>
+        <option>Pabna</option>
+        <option>Rajshahi</option>
+        <option>Sirajganj</option>
+      </optgroup>
+
+      <optgroup label="Khulna Division">
+        <option>Bagerhat</option>
+        <option>Chuadanga</option>
+        <option>Jashore</option>
+        <option>Jhenaidah</option>
+        <option>Khulna</option>
+        <option>Kushtia</option>
+        <option>Magura</option>
+        <option>Meherpur</option>
+        <option>Narail</option>
+        <option>Satkhira</option>
+      </optgroup>
+
+      <optgroup label="Barishal Division">
+        <option>Barguna</option>
+        <option>Barishal</option>
+        <option>Bhola</option>
+        <option>Jhalokati</option>
+        <option>Patuakhali</option>
+        <option>Pirojpur</option>
+      </optgroup>
+
+      <optgroup label="Sylhet Division">
+        <option>Habiganj</option>
+        <option>Moulvibazar</option>
+        <option>Sunamganj</option>
+        <option>Sylhet</option>
+      </optgroup>
+
+      <optgroup label="Rangpur Division">
+        <option>Dinajpur</option>
+        <option>Gaibandha</option>
+        <option>Kurigram</option>
+        <option>Lalmonirhat</option>
+        <option>Nilphamari</option>
+        <option>Panchagarh</option>
+        <option>Rangpur</option>
+        <option>Thakurgaon</option>
+      </optgroup>
+
+      <optgroup label="Mymensingh Division">
+        <option>Jamalpur</option>
+        <option>Mymensingh</option>
+        <option>Netrokona</option>
+        <option>Sherpur</option>
+      </optgroup>
+    </select>
+  </div>
+  <br>
+
+  <div>
+  <label for="UT">Upazila/Thana: </label>
+    <select id="UT">
+      <option value="">-- Select Upazila/Thana --</option>
+
+      <!-- ========== DHAKA DIVISION ========== -->
+      <optgroup label="Dhaka District">
+        <option>Dhamrai</option>
+        <option>Dohar</option>
+        <option>Keraniganj</option>
+        <option>Nawabganj</option>
+        <option>Savar</option>
+      </optgroup>
+
+      <optgroup label="Faridpur District">
+        <option>Alfadanga</option>
+        <option>Bhanga</option>
+        <option>Boalmari</option>
+        <option>Charbhadrasan</option>
+        <option>Faridpur Sadar</option>
+        <option>Madhukhali</option>
+        <option>Nagarkanda</option>
+        <option>Sadarpur</option>
+        <option>Saltha</option>
+      </optgroup>
+
+      <optgroup label="Gazipur District">
+        <option>Gazipur Sadar</option>
+        <option>Kaliakair</option>
+        <option>Kaliganj</option>
+        <option>Kapasia</option>
+        <option>Sreepur</option>
+      </optgroup>
+
+      <optgroup label="Gopalganj District">
+        <option>Gopalganj Sadar</option>
+        <option>Kashiani</option>
+        <option>Kotalipara</option>
+        <option>Muksudpur</option>
+        <option>Tungipara</option>
+      </optgroup>
+
+      <optgroup label="Kishoreganj District">
+        <option>Austagram</option>
+        <option>Bajitpur</option>
+        <option>Bhairab</option>
+        <option>Hossainpur</option>
+        <option>Itna</option>
+        <option>Karimganj</option>
+        <option>Katiadi</option>
+        <option>Kishoreganj Sadar</option>
+        <option>Kuliarchar</option>
+        <option>Mithamain</option>
+        <option>Nikli</option>
+        <option>Pakundia</option>
+        <option>Tarail</option>
+      </optgroup>
+
+      <optgroup label="Madaripur District">
+        <option>Madaripur Sadar</option>
+        <option>Kalkini</option>
+        <option>Rajoir</option>
+        <option>Shibchar</option>
+        <option>Dasar</option>
+      </optgroup>
+
+      <optgroup label="Manikganj District">
+        <option>Daulatpur</option>
+        <option>Ghior</option>
+        <option>Harirampur</option>
+        <option>Manikganj Sadar</option>
+        <option>Saturia</option>
+        <option>Shibalaya</option>
+        <option>Singair</option>
+      </optgroup>
+
+      <optgroup label="Munshiganj District">
+        <option>Gazaria</option>
+        <option>Louhajang</option>
+        <option>Munshiganj Sadar</option>
+        <option>Sirajdikhan</option>
+        <option>Sreenagar</option>
+        <option>Tongibari</option>
+      </optgroup>
+
+      <optgroup label="Narayanganj District">
+        <option>Araihazar</option>
+        <option>Bandar</option>
+        <option>Narayanganj Sadar</option>
+        <option>Rupganj</option>
+        <option>Sonargaon</option>
+      </optgroup>
+
+      <optgroup label="Narsingdi District">
+        <option>Belabo</option>
+        <option>Monohardi</option>
+        <option>Narsingdi Sadar</option>
+        <option>Palash</option>
+        <option>Raipura</option>
+        <option>Shibpur</option>
+      </optgroup>
+
+      <optgroup label="Rajbari District">
+        <option>Baliakandi</option>
+        <option>Goalanda</option>
+        <option>Kalukhali</option>
+        <option>Pangsha</option>
+        <option>Rajbari Sadar</option>
+      </optgroup>
+
+      <optgroup label="Shariatpur District">
+        <option>Bhedarganj</option>
+        <option>Damudya</option>
+        <option>Gosairhat</option>
+        <option>Jajira</option>
+        <option>Naria</option>
+        <option>Shariatpur Sadar</option>
+      </optgroup>
+
+      <optgroup label="Tangail District">
+        <option>Basail</option>
+        <option>Bhuapur</option>
+        <option>Delduar</option>
+        <option>Dhanbari</option>
+        <option>Ghatail</option>
+        <option>Gopalpur</option>
+        <option>Kalihati</option>
+        <option>Madhupur</option>
+        <option>Mirzapur</option>
+        <option>Nagarpur</option>
+        <option>Sakhipur</option>
+        <option>Tangail Sadar</option>
+      </optgroup>
+
+      <!-- ========== CHATTOGRAM DIVISION ========== -->
+      <optgroup label="Bandarban District">
+        <option>Alikadam</option>
+        <option>Bandarban Sadar</option>
+        <option>Lama</option>
+        <option>Naikhongchhari</option>
+        <option>Rowangchhari</option>
+        <option>Ruma</option>
+        <option>Thanchi</option>
+      </optgroup>
+
+      <optgroup label="Brahmanbaria District">
+        <option>Akhaura</option>
+        <option>Ashuganj</option>
+        <option>Bancharampur</option>
+        <option>Bijoynagar</option>
+        <option>Brahmanbaria Sadar</option>
+        <option>Kasba</option>
+        <option>Nabinagar</option>
+        <option>Nasirnagar</option>
+        <option>Sarail</option>
+      </optgroup>
+
+      <optgroup label="Chandpur District">
+        <option>Chandpur Sadar</option>
+        <option>Faridganj</option>
+        <option>Haimchar</option>
+        <option>Hajiganj</option>
+        <option>Kachua</option>
+        <option>Matlab Dakshin</option>
+        <option>Matlab Uttar</option>
+        <option>Shahrasti</option>
+      </optgroup>
+
+      <optgroup label="Chattogram District">
+        <option>Anwara</option>
+        <option>Banshkhali</option>
+        <option>Boalkhali</option>
+        <option>Chandanaish</option>
+        <option>Fatikchhari</option>
+        <option>Hathazari</option>
+        <option>Karnaphuli</option>
+        <option>Lohagara</option>
+        <option>Mirsharai</option>
+        <option>Patiya</option>
+        <option>Rangunia</option>
+        <option>Raozan</option>
+        <option>Sandwip</option>
+        <option>Satkania</option>
+        <option>Sitakunda</option>
+      </optgroup>
+
+      <optgroup label="Cumilla District">
+        <option>Barura</option>
+        <option>Brahmanpara</option>
+        <option>Burichang</option>
+        <option>Chandina</option>
+        <option>Chauddagram</option>
+        <option>Cumilla Adarsha Sadar</option>
+        <option>Cumilla Sadar Dakshin</option>
+        <option>Daudkandi</option>
+        <option>Debidwar</option>
+        <option>Homna</option>
+        <option>Laksam</option>
+        <option>Lalmai</option>
+        <option>Meghna</option>
+        <option>Monoharganj</option>
+        <option>Muradnagar</option>
+        <option>Nangalkot</option>
+        <option>Titas</option>
+      </optgroup>
+
+      <optgroup label="Cox's Bazar District">
+        <option>Chakaria</option>
+        <option>Cox's Bazar Sadar</option>
+        <option>Eidgaon</option>
+        <option>Kutubdia</option>
+        <option>Maheshkhali</option>
+        <option>Pekua</option>
+        <option>Ramu</option>
+        <option>Teknaf</option>
+        <option>Ukhiya</option>
+      </optgroup>
+
+      <optgroup label="Feni District">
+        <option>Chhagalnaiya</option>
+        <option>Daganbhuiyan</option>
+        <option>Feni Sadar</option>
+        <option>Fulgazi</option>
+        <option>Parshuram</option>
+        <option>Sonagazi</option>
+      </optgroup>
+
+      <optgroup label="Khagrachhari District">
+        <option>Dighinala</option>
+        <option>Khagrachhari Sadar</option>
+        <option>Lakshmichhari</option>
+        <option>Mahalchhari</option>
+        <option>Manikchhari</option>
+        <option>Matiranga</option>
+        <option>Panchhari</option>
+        <option>Ramgarh</option>
+      </optgroup>
+
+      <optgroup label="Lakshmipur District">
+        <option>Kamalnagar</option>
+        <option>Lakshmipur Sadar</option>
+        <option>Raipur</option>
+        <option>Ramganj</option>
+        <option>Ramgati</option>
+      </optgroup>
+
+      <optgroup label="Noakhali District">
+        <option>Begumganj</option>
+        <option>Chatkhil</option>
+        <option>Companiganj</option>
+        <option>Hatiya</option>
+        <option>Kabirhat</option>
+        <option>Noakhali Sadar</option>
+        <option>Senbagh</option>
+        <option>Sonaimuri</option>
+        <option>Subarnachar</option>
+      </optgroup>
+
+      <optgroup label="Rangamati District">
+        <option>Baghaichhari</option>
+        <option>Barkal</option>
+        <option>Kawkhali</option>
+        <option>Belaichhari</option>
+        <option>Juraichhari</option>
+        <option>Langadu</option>
+        <option>Naniarchar</option>
+        <option>Rajasthali</option>
+        <option>Rangamati Sadar</option>
+      </optgroup>
+
+      <!-- ========== RAJSHAHI DIVISION ========== -->
+      <optgroup label="Bogura District">
+        <option>Adamdighi</option>
+        <option>Bogura Sadar</option>
+        <option>Dhunat</option>
+        <option>Dhupchanchia</option>
+        <option>Gabtali</option>
+        <option>Kahaloo</option>
+        <option>Nandigram</option>
+        <option>Sariakandi</option>
+        <option>Shajahanpur</option>
+        <option>Sherpur</option>
+        <option>Shibganj</option>
+        <option>Sonatala</option>
+      </optgroup>
+
+      <optgroup label="Joypurhat District">
+        <option>Akkelpur</option>
+        <option>Joypurhat Sadar</option>
+        <option>Kalai</option>
+        <option>Khetlal</option>
+        <option>Panchbibi</option>
+      </optgroup>
+
+      <optgroup label="Naogaon District">
+        <option>Atrai</option>
+        <option>Badalgachhi</option>
+        <option>Dhamoirhat</option>
+        <option>Manda</option>
+        <option>Mahadebpur</option>
+        <option>Naogaon Sadar</option>
+        <option>Niamatpur</option>
+        <option>Patnitala</option>
+        <option>Porsha</option>
+        <option>Raninagar</option>
+        <option>Sapahar</option>
+      </optgroup>
+
+      <optgroup label="Natore District">
+        <option>Bagatipara</option>
+        <option>Baraigram</option>
+        <option>Gurudaspur</option>
+        <option>Lalpur</option>
+        <option>Natore Sadar</option>
+        <option>Singra</option>
+        <option>Naldanga</option>
+      </optgroup>
+
+      <optgroup label="Chapainawabganj District">
+        <option>Bholahat</option>
+        <option>Gomostapur</option>
+        <option>Nachole</option>
+        <option>Chapainawabganj Sadar</option>
+        <option>Shibganj</option>
+      </optgroup>
+
+      <optgroup label="Pabna District">
+        <option>Atgharia</option>
+        <option>Bera</option>
+        <option>Bhangura</option>
+        <option>Chatmohar</option>
+        <option>Faridpur</option>
+        <option>Ishwardi</option>
+        <option>Pabna Sadar</option>
+        <option>Santhia</option>
+        <option>Sujanagar</option>
+      </optgroup>
+
+      <optgroup label="Rajshahi District">
+        <option>Bagha</option>
+        <option>Bagmara</option>
+        <option>Charghat</option>
+        <option>Durgapur</option>
+        <option>Godagari</option>
+        <option>Mohanpur</option>
+        <option>Paba</option>
+        <option>Puthia</option>
+        <option>Tanore</option>
+      </optgroup>
+
+      <optgroup label="Sirajganj District">
+        <option>Belkuchi</option>
+        <option>Chauhali</option>
+        <option>Kamarkhanda</option>
+        <option>Kazipur</option>
+        <option>Raiganj</option>
+        <option>Shahjadpur</option>
+        <option>Sirajganj Sadar</option>
+        <option>Tarash</option>
+        <option>Ullahpara</option>
+      </optgroup>
+
+      <!-- ========== KHULNA DIVISION ========== -->
+      <optgroup label="Bagerhat District">
+        <option>Bagerhat Sadar</option>
+        <option>Chitalmari</option>
+        <option>Fakirhat</option>
+        <option>Kachua</option>
+        <option>Mollahat</option>
+        <option>Mongla</option>
+        <option>Morrelganj</option>
+        <option>Rampal</option>
+        <option>Sarankhola</option>
+      </optgroup>
+
+      <optgroup label="Chuadanga District">
+        <option>Alamdanga</option>
+        <option>Chuadanga Sadar</option>
+        <option>Damurhuda</option>
+        <option>Jibannagar</option>
+      </optgroup>
+
+      <optgroup label="Jashore District">
+        <option>Abhaynagar</option>
+        <option>Bagherpara</option>
+        <option>Chaugachha</option>
+        <option>Jhikargachha</option>
+        <option>Keshabpur</option>
+        <option>Jashore Sadar</option>
+        <option>Manirampur</option>
+        <option>Sharsha</option>
+      </optgroup>
+
+      <optgroup label="Jhenaidah District">
+        <option>Harinakunda</option>
+        <option>Jhenaidah Sadar</option>
+        <option>Kaliganj</option>
+        <option>Kotchandpur</option>
+        <option>Maheshpur</option>
+        <option>Shailkupa</option>
+      </optgroup>
+
+      <optgroup label="Khulna District">
+        <option>Batiaghata</option>
+        <option>Dacope</option>
+        <option>Dighalia</option>
+        <option>Dumuria</option>
+        <option>Koyra</option>
+        <option>Paikgachha</option>
+        <option>Phultala</option>
+        <option>Rupsa</option>
+        <option>Terokhada</option>
+      </optgroup>
+
+      <optgroup label="Kushtia District">
+        <option>Bheramara</option>
+        <option>Daulatpur</option>
+        <option>Khoksa</option>
+        <option>Kushtia Sadar</option>
+        <option>Kumarkhali</option>
+        <option>Mirpur</option>
+      </optgroup>
+
+      <optgroup label="Magura District">
+        <option>Magura Sadar</option>
+        <option>Mohammadpur</option>
+        <option>Shalikha</option>
+        <option>Sreepur</option>
+      </optgroup>
+
+      <optgroup label="Meherpur District">
+        <option>Gangni</option>
+        <option>Meherpur Sadar</option>
+        <option>Mujibnagar</option>
+      </optgroup>
+
+      <optgroup label="Narail District">
+        <option>Kalia</option>
+        <option>Lohagara</option>
+        <option>Narail Sadar</option>
+      </optgroup>
+
+      <optgroup label="Satkhira District">
+        <option>Assasuni</option>
+        <option>Debhata</option>
+        <option>Kalaroa</option>
+        <option>Kaliganj</option>
+        <option>Satkhira Sadar</option>
+        <option>Shyamnagar</option>
+        <option>Tala</option>
+      </optgroup>
+
+      <!-- ========== BARISHAL DIVISION ========== -->
+      <optgroup label="Barguna District">
+        <option>Amtali</option>
+        <option>Bamna</option>
+        <option>Barguna Sadar</option>
+        <option>Betagi</option>
+        <option>Patharghata</option>
+        <option>Taltali</option>
+      </optgroup>
+
+      <optgroup label="Barishal District">
+        <option>Agailjhara</option>
+        <option>Babuganj</option>
+        <option>Bakerganj</option>
+        <option>Banaripara</option>
+        <option>Gaurnadi</option>
+        <option>Hizla</option>
+        <option>Barishal Sadar</option>
+        <option>Mehendiganj</option>
+        <option>Muladi</option>
+        <option>Wazirpur</option>
+      </optgroup>
+
+      <optgroup label="Bhola District">
+        <option>Bhola Sadar</option>
+        <option>Burhanuddin</option>
+        <option>Char Fasson</option>
+        <option>Daulatkhan</option>
+        <option>Lalmohan</option>
+        <option>Manpura</option>
+        <option>Tazumuddin</option>
+      </optgroup>
+
+      <optgroup label="Jhalokati District">
+        <option>Jhalokati Sadar</option>
+        <option>Kathalia</option>
+        <option>Nalchity</option>
+        <option>Rajapur</option>
+      </optgroup>
+
+      <optgroup label="Patuakhali District">
+        <option>Bauphal</option>
+        <option>Dashmina</option>
+        <option>Dumki</option>
+        <option>Galachipa</option>
+        <option>Kalapara</option>
+        <option>Mirzaganj</option>
+        <option>Patuakhali Sadar</option>
+        <option>Rangabali</option>
+      </optgroup>
+
+      <optgroup label="Pirojpur District">
+        <option>Bhandaria</option>
+        <option>Indurkani</option>
+        <option>Kawkhali</option>
+        <option>Mathbaria</option>
+        <option>Nazirpur</option>
+        <option>Pirojpur Sadar</option>
+        <option>Nesarabad</option>
+      </optgroup>
+
+      <!-- ========== SYLHET DIVISION ========== -->
+      <optgroup label="Habiganj District">
+        <option>Ajmiriganj</option>
+        <option>Bahubal</option>
+        <option>Baniachong</option>
+        <option>Chunarughat</option>
+        <option>Habiganj Sadar</option>
+        <option>Lakhai</option>
+        <option>Madhabpur</option>
+        <option>Nabiganj</option>
+        <option>Shayestaganj</option>
+      </optgroup>
+
+      <optgroup label="Moulvibazar District">
+        <option>Barlekha</option>
+        <option>Juri</option>
+        <option>Kamalganj</option>
+        <option>Kulaura</option>
+        <option>Moulvibazar Sadar</option>
+        <option>Rajnagar</option>
+        <option>Sreemangal</option>
+      </optgroup>
+
+      <optgroup label="Sunamganj District">
+        <option>Bishwamvarpur</option>
+        <option>Chhatak</option>
+        <option>Dakshin Sunamganj (Shantiganj)</option>
+        <option>Derai</option>
+        <option>Dharamapasha</option>
+        <option>Dowarabazar</option>
+        <option>Jagannathpur</option>
+        <option>Jamalganj</option>
+        <option>Madhyanagar</option>
+        <option>Shalla</option>
+        <option>Sunamganj Sadar</option>
+        <option>Tahirpur</option>
+      </optgroup>
+
+      <optgroup label="Sylhet District">
+        <option>Balaganj</option>
+        <option>Beanibazar</option>
+        <option>Bishwanath</option>
+        <option>Companiganj</option>
+        <option>Fenchuganj</option>
+        <option>Golapganj</option>
+        <option>Gowainghat</option>
+        <option>Jaintiapur</option>
+        <option>Kanaighat</option>
+        <option>Osmaninagar</option>
+        <option>Sylhet Sadar</option>
+        <option>Zakiganj</option>
+        <option>Dakshin Surma</option>
+      </optgroup>
+
+      <!-- ========== RANGPUR DIVISION ========== -->
+      <optgroup label="Dinajpur District">
+        <option>Birampur</option>
+        <option>Birganj</option>
+        <option>Biral</option>
+        <option>Bochaganj</option>
+        <option>Chirirbandar</option>
+        <option>Phulbari</option>
+        <option>Ghoraghat</option>
+        <option>Hakimpur</option>
+        <option>Kaharole</option>
+        <option>Khansama</option>
+        <option>Dinajpur Sadar</option>
+        <option>Nawabganj</option>
+        <option>Parbatipur</option>
+      </optgroup>
+
+      <optgroup label="Gaibandha District">
+        <option>Fulchhari</option>
+        <option>Gaibandha Sadar</option>
+        <option>Gobindaganj</option>
+        <option>Palashbari</option>
+        <option>Sadullapur</option>
+        <option>Saghata</option>
+        <option>Sundarganj</option>
+      </optgroup>
+
+      <optgroup label="Kurigram District">
+        <option>Bhurungamari</option>
+        <option>Char Rajibpur</option>
+        <option>Chilmari</option>
+        <option>Fulbari</option>
+        <option>Kurigram Sadar</option>
+        <option>Nageshwari</option>
+        <option>Rajarhat</option>
+        <option>Raumari</option>
+        <option>Ulipur</option>
+      </optgroup>
+
+      <optgroup label="Lalmonirhat District">
+        <option>Aditmari</option>
+        <option>Hatibandha</option>
+        <option>Kaliganj</option>
+        <option>Lalmonirhat Sadar</option>
+        <option>Patgram</option>
+      </optgroup>
+
+      <optgroup label="Nilphamari District">
+        <option>Dimla</option>
+        <option>Domar</option>
+        <option>Jaldhaka</option>
+        <option>Kishoreganj</option>
+        <option>Nilphamari Sadar</option>
+        <option>Saidpur</option>
+      </optgroup>
+
+      <optgroup label="Panchagarh District">
+        <option>Atwari</option>
+        <option>Boda</option>
+        <option>Debiganj</option>
+        <option>Panchagarh Sadar</option>
+        <option>Tetulia</option>
+      </optgroup>
+
+      <optgroup label="Rangpur District">
+        <option>Badarganj</option>
+        <option>Gangachara</option>
+        <option>Kaunia</option>
+        <option>Rangpur Sadar</option>
+        <option>Mithapukur</option>
+        <option>Pirgachha</option>
+        <option>Pirganj</option>
+        <option>Taraganj</option>
+      </optgroup>
+
+      <optgroup label="Thakurgaon District">
+        <option>Baliadangi</option>
+        <option>Haripur</option>
+        <option>Pirganj</option>
+        <option>Ranishankail</option>
+        <option>Thakurgaon Sadar</option>
+      </optgroup>
+
+      <!-- ========== MYMENSINGH DIVISION ========== -->
+      <optgroup label="Jamalpur District">
+        <option>Bakshiganj</option>
+        <option>Dewanganj</option>
+        <option>Islampur</option>
+        <option>Jamalpur Sadar</option>
+        <option>Madarganj</option>
+        <option>Melandaha</option>
+        <option>Sarishabari</option>
+      </optgroup>
+
+      <optgroup label="Mymensingh District">
+        <option>Bhaluka</option>
+        <option>Dhobaura</option>
+        <option>Fulbaria</option>
+        <option>Gaffargaon</option>
+        <option>Gauripur</option>
+        <option>Haluaghat</option>
+        <option>Ishwarganj</option>
+        <option>Mymensingh Sadar</option>
+        <option>Muktagachha</option>
+        <option>Nandail</option>
+        <option>Phulpur</option>
+        <option>Trishal</option>
+        <option>Tarakanda</option>
+      </optgroup>
+
+      <optgroup label="Netrokona District">
+        <option>Atpara</option>
+        <option>Barhatta</option>
+        <option>Durgapur</option>
+        <option>Kalmakanda</option>
+        <option>Kendua</option>
+        <option>Khaliajuri</option>
+        <option>Madan</option>
+        <option>Mohanganj</option>
+        <option>Netrokona Sadar</option>
+        <option>Purbadhala</option>
+      </optgroup>
+
+      <optgroup label="Sherpur District">
+        <option>Jhenaigati</option>
+        <option>Nakla</option>
+        <option>Nalitabari</option>
+        <option>Sherpur Sadar</option>
+        <option>Sreebardi</option>
+      </optgroup>
+
+    </select>
+  </div>
+  <br>
+
+  <div>
+<label for="userType">User</label>
+<select id="userType">
+<option value="Select User">User Type</option>
+<option value="Citizen">Citizen</option>
+<option value="Officer">Officer</option>
+<option value="Field Worker"> Field Worker</option>
+<option value="Administrator">Administrator</option>
+</select>
+ <div><br>
+ <input type="submit" value="Register" class="btn">
+  </div>
+
+
+  </div>
+</form>
+
+
+  <script>
+    (function () {
+      'use strict';
+
+      var MOBILE_BREAKPOINT = 600;
+      var REDIRECT_URL = 'login.html';
+      var USER_KEY = 'nagarSheba_registeredUser';
+      var VALID_NID_LENGTHS = [10, 13, 17]; // Bangladesh NID formats
+
+      var form = document.querySelector('form');
+      var nameInput = document.getElementById('name');
+      var nidInput = document.getElementById('nid');
+      var division = document.getElementById('division');
+      var district = document.getElementById('District');
+      var upazila = document.getElementById('UT');
+      var userType = document.getElementById('userType');
+      var submitBtn = form.querySelector('.btn');
+
+      form.setAttribute('novalidate', 'novalidate');
+
+      // NID: text field with numeric keypad (keeps leading zeros, blocks e + - .)
+      nidInput.type = 'text';
+      nidInput.setAttribute('inputmode', 'numeric');
+      nidInput.setAttribute('autocomplete', 'off');
+      nidInput.setAttribute('maxlength', '17');
+
+      // ---------- Cascading Division -> District -> Upazila/Thana ----------
+      // The page already groups districts by "<Division> Division" and
+      // upazilas by "<District> District", so those labels drive the filtering.
+      function collectGroups(select) {
+        var map = {};
+        select.querySelectorAll('optgroup').forEach(function (group) {
+          map[group.label] = Array.prototype.map.call(group.querySelectorAll('option'), function (o) {
+            return o.textContent.trim();
+          });
+        });
+        return map;
+      }
+
+      var districtGroups = collectGroups(district);
+      var upazilaGroups = collectGroups(upazila);
+
+      function resetSelect(select, placeholder, items, enable) {
+        select.innerHTML = '';
+        var first = document.createElement('option');
+        first.value = '';
+        first.textContent = placeholder;
+        select.appendChild(first);
+
+        (items || []).forEach(function (text) {
+          var opt = document.createElement('option');
+          opt.value = text;
+          opt.textContent = text;
+          select.appendChild(opt);
+        });
+
+        select.disabled = !enable;
+        select.style.backgroundColor = enable ? '' : '#f1f3f7';
+        select.style.cursor = enable ? '' : 'not-allowed';
+      }
+
+      resetSelect(district, '-- Select District --', [], false);
+      resetSelect(upazila, '-- Select Upazila/Thana --', [], false);
+
+      division.addEventListener('change', function () {
+        var items = districtGroups[division.value + ' Division'] || [];
+        resetSelect(district, '-- Select District --', items, items.length > 0);
+        resetSelect(upazila, '-- Select Upazila/Thana --', [], false);
+        validateSelect(division, 'Please select your division.');
+      });
+
+      district.addEventListener('change', function () {
+        var items = upazilaGroups[district.value + ' District'] || [];
+        resetSelect(upazila, '-- Select Upazila/Thana --', items, items.length > 0);
+        validateSelect(district, 'Please select your district.');
+      });
+
+      // ---------- Error message helpers ----------
+      var fields = [nameInput, nidInput, division, district, upazila, userType];
+      var errors = {};
+
+      fields.forEach(function (field) {
+        var err = document.createElement('div');
+        err.setAttribute('role', 'alert');
+        err.style.cssText = 'display:none;color:#b3261e;font-size:13px;margin-top:4px;';
+        field.insertAdjacentElement('afterend', err);
+        errors[field.id] = err;
+      });
+
+      function setError(field, message) {
+        errors[field.id].textContent = message;
+        errors[field.id].style.display = 'block';
+        field.style.borderColor = '#b3261e';
+        field.setAttribute('aria-invalid', 'true');
+      }
+
+      function clearError(field) {
+        errors[field.id].style.display = 'none';
+        field.style.borderColor = '';
+        field.removeAttribute('aria-invalid');
+      }
+
+      // ---------- Validators ----------
+      function validateName() {
+        var value = nameInput.value.trim();
+        if (value.length < 2) {
+          setError(nameInput, 'Please enter your full name.');
+          return false;
+        }
+        if (!/^[A-Za-z\u0980-\u09FF .'-]+$/.test(value)) {
+          setError(nameInput, 'Name can only contain letters and spaces.');
+          return false;
+        }
+        clearError(nameInput);
+        return true;
+      }
+
+      function validateNid() {
+        var value = nidInput.value.trim();
+        if (value === '') {
+          setError(nidInput, 'Please enter your NID number.');
+          return false;
+        }
+        if (VALID_NID_LENGTHS.indexOf(value.length) === -1) {
+          setError(nidInput, 'NID must be ' + VALID_NID_LENGTHS.join(', ') + ' digits.');
+          return false;
+        }
+        clearError(nidInput);
+        return true;
+      }
+
+      function validateSelect(select, message) {
+        if (!select.value || select.value === 'Select User') {
+          setError(select, message);
+          return false;
+        }
+        clearError(select);
+        return true;
+      }
+
+      // ---------- Events ----------
+      nameInput.addEventListener('blur', validateName);
+      nameInput.addEventListener('input', function () {
+        if (errors.name.style.display === 'block') validateName();
+      });
+
+      nidInput.addEventListener('input', function () {
+        nidInput.value = nidInput.value.replace(/\D/g, '');
+        if (errors.nid.style.display === 'block') validateNid();
+      });
+      nidInput.addEventListener('blur', function () {
+        if (nidInput.value !== '') validateNid();
+      });
+
+      upazila.addEventListener('change', function () {
+        validateSelect(upazila, 'Please select your upazila/thana.');
+      });
+      userType.addEventListener('change', function () {
+        validateSelect(userType, 'Please select your user type.');
+      });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var results = [
+          validateName(),
+          validateNid(),
+          validateSelect(division, 'Please select your division.'),
+          validateSelect(district, 'Please select your district.'),
+          validateSelect(upazila, 'Please select your upazila/thana.'),
+          validateSelect(userType, 'Please select your user type.')
+        ];
+
+        if (results.indexOf(false) !== -1) {
+          var firstInvalid = form.querySelector('[aria-invalid="true"]');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        // Save registration details (NID is intentionally not stored)
+        try {
+          localStorage.setItem(USER_KEY, JSON.stringify({
+            name: nameInput.value.trim(),
+            division: division.value,
+            district: district.value,
+            upazila: upazila.value,
+            userType: userType.value,
+            registeredAt: new Date().toISOString()
+          }));
+        } catch (err) { /* storage unavailable */ }
+
+        submitBtn.disabled = true;
+        submitBtn.value = 'Registering...';
+        submitBtn.style.opacity = '0.7';
+        submitBtn.style.cursor = 'not-allowed';
+
+        setTimeout(function () {
+          window.location.href = REDIRECT_URL;
+        }, 600);
+      });
+
+      // ---------- Responsive layout ----------
+      function adjustLayout() {
+        var small = window.innerWidth <= MOBILE_BREAKPOINT;
+        fields.forEach(function (field) {
+          errors[field.id].style.textAlign = small ? 'left' : 'center';
+        });
+        submitBtn.style.width = small ? '100%' : '';
+      }
+
+      window.addEventListener('resize', adjustLayout);
+      window.addEventListener('orientationchange', adjustLayout);
+
+      // ---------- Init ----------
+      adjustLayout();
+    })();
+  </script>
+
+</body>
+</html>
